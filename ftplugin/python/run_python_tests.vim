@@ -1,23 +1,6 @@
 " run_python_tests.vim
-"
-" Allows the user to:
-" a) Toggle between a Python file and its corresponding unit tests.
-" b) Run the current file.
-" c) Run the unit tests for the current file.
-" d) Run the single test method currently under the text cursor.
-" Running files and tests is done asynchronously, and the results may be
-" either displayed in the Vim quickfix window, or in an external 'console'
-" window using 'rerun' (both of which must be on the PATH)
-" 
-" Throughout, I use the term 'product' to mean the user's code which is
-" being tested, as opposed to the tests for that code. All code is either
-" test code or else product code.
-" e.g. ./widget.py (product) corresponds to ./tests/testWidget.py (test)
-
-" TODO Make it all work on Linux
-" TODO Instead of printing out status messages, can we prepend them to the
-"      output in the quickfix window?
-
+" v0.1 17 Oct 2010
+" See README in ftplugin/python/run_python_tests
 
 " Make sure we run only once
 if exists("loaded_run_python_tests")
