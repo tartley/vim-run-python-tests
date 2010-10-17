@@ -87,6 +87,7 @@ PYTHON TRACEBACKS IN THE VIM QUICKFIX WINDOW
 
 TODO
 
+    * Try with latest Vim
     * Make it all work on Linux
     * Instead of printing out status messages, can we prepend them to the
       output in the quickfix window?
