@@ -84,7 +84,6 @@ function RunCommandInternal(command)
 
     let temp_file = tempname()
 
-    echo s:rootdir
     execute 'silent !start /min cmd /C "'.a:command.' 2>&1 '.
         \ '| python "'.s:rootdir.'filtercwd.py" >'.temp_file
         \ '& vim --servername '.v:servername.' --remote-expr "ReadFileIntoQuickfix('."'".temp_file."')\""'"'
@@ -93,11 +92,10 @@ endfunction
 
 "-------------------------------------------------------------------------
 " Asynchronously run the given command 'externally', i.e. in an external
-" cmd window, using 'rerun' (http://bitbucket.org/tartley/rerun), which is
-" assumed to be on the PATH
+" cmd window, using 'rerun' (http://bitbucket.org/tartley/rerun)
 
 function! RunCommandExternal(command)
-    let command = 'rerun '.a:command
+    let command = 'python "'.s:rootdir.'rerun.py" '.a:command
     execute 'silent !start cmd /C '.command.''
 endfunction
 
