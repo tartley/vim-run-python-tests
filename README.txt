@@ -1,6 +1,6 @@
 Vim run tests
 
-    http://bitbucket.org/tartley/vim_run_tests
+    http://bitbucket.org/tartley/vim_run_python_tests
 
     Vim scripts to run the Python file in the current buffer, or to find and
     run its unit tests, or to run the single test method under the cursor.
@@ -40,7 +40,7 @@ PYTHON TRACEBACKS IN THE VIM QUICKFIX WINDOW
 
         CompilerSet efm=\%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ %m,%C\ %m,%Z
 
-    When you now run the ':compiler pyunit' command (as the run_tests script
+    When you now run the ':compiler pyunit' command (as run_python_tests
     does whenever you press F5, F6, or F7), Vim's quickfix window will now
     display all entries from tracebacks.
 
@@ -52,10 +52,10 @@ INSTALL
     ~/.vim
         |-ftplugin
            |-python
-              |-run_tests.vim
-              |-run_tests
-                 |-run_tests.py
-                 |-test_run_tests.py
+              |-run_python_tests.vim
+              |-run_python_tests
+                 |-run_python_tests.py
+                 |-test_run_python_tests.py
                  |-README.txt
 
 

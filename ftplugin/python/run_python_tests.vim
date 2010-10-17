@@ -1,7 +1,7 @@
-" run_tests.vim
+" run_python_tests.vim
 "
-" When using Vim to write Python, run_tests allows the user to:
-" a) Toggle between a product code file and its corresponding unit test file.
+" Allows the user to:
+" a) Toggle between a Python file and its corresponding unit tests.
 " b) Run the current file.
 " c) Run the unit tests for the current file.
 " d) Run the single test method currently under the text cursor.
@@ -14,20 +14,24 @@
 " test code or else product code.
 " e.g. ./widget.py (product) corresponds to ./tests/testWidget.py (test)
 
-" TODO Check all works OK on Linux
+" TODO Make it all work on Linux
+" TODO Instead of printing out status messages, can we prepend them to the
+"      output in the quickfix window?
 
 
 " Make sure we run only once
-if exists("loaded_python_run_tests")
+if exists("loaded_run_python_tests")
     finish
 endif
-let loaded_python_run_tests = 1
+let loaded_run_python_tests = 1
+
+" The dir in which this script's dependencies live
+let s:rootdir = fnamemodify(expand("<sfile>"), ":h")."\\run_python_tests\\"
 
 " load python utility functions
 " The 'execute' and 'fn*' functions make this more robust under various
 " environments than simply using 'pyfile <filename>' would be.
-let s:rootdir = fnamemodify(expand("<sfile>"), ":h")."\\run_tests\\"
-execute "pyfile ".fnameescape(s:rootdir."run_tests.py")
+execute "pyfile ".fnameescape(s:rootdir."run_python_tests.py")
 
 
 "-------------------------------------------------------------------------
@@ -131,8 +135,8 @@ nnoremap <silent> <s-f5> :call RunCurrentPythonFile(1)<cr>
 
 "-------------------------------------------------------------------------
 " Run the unittests of the file in the current buffer
-nnoremap <silent> <f6> :python run_tests(external=0)<cr>
-nnoremap <silent> <s-f6> :python run_tests(external=1)<cr>
+nnoremap <silent> <f6> :python run_python_tests(external=0)<cr>
+nnoremap <silent> <s-f6> :python run_python_tests(external=1)<cr>
 
 "-------------------------------------------------------------------------
 " Run the single test method under the text cursor

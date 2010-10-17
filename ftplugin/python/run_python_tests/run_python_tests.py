@@ -7,8 +7,6 @@ from os.path import (
 import re
 import vim
 
-# utility functions for run_tests.vim
-
 # -- public ----
 
 # All possible unit test subdirectory naming conventions
@@ -57,7 +55,7 @@ def toggle_test(create=False):
             _cant_find(current, to_test=True, create=create)
 
 
-def run_tests(external):
+def run_python_tests(external):
     '''
     If the current file has unit tests, run them. If the current file is a
     unit test, run it. Running is asynchronous. Output is read into quickfix.
@@ -90,6 +88,8 @@ def run_tests(external):
     else:
         print "Can't find test file"
 
+
+# regular expressions used to detect test method and test class names
 
 test_method_re = re.compile('''
     [ ]*        # optional preceding whitespace
@@ -209,6 +209,10 @@ class _DirnameInTheSameDir(_DirnameConvention):
     def to_test(self, path):
         return path
 
+# enumerate all known test subdir naming conventions
+_dir_conventions = map(_DirnameConvention, test_subdir_names)
+_dir_conventions.append(_DirnameInTheSameDir())
+
 
 class _FilenameConvention(object):
     '''
@@ -255,10 +259,7 @@ class _FilenameConvention(object):
         else:
             raise RuntimeError('not a product filename: ' + filename)
 
-
-# enumerate all known test subdir and test file naming conventions
-_dir_conventions = map(_DirnameConvention, test_subdir_names)
-_dir_conventions.append(_DirnameInTheSameDir())
+# enumerate all known test file naming conventions
 _file_conventions = map(_FilenameConvention, test_filenames)
 
 

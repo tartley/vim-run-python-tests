@@ -1,13 +1,13 @@
-# Run these tests by running this from dir $VIMHOME/ftplugin/python:
+# Run these tests by running this from your home dir:
 #
-#   vim -c "execute 'pyfile .vim/ftplugin/python/run_tests/test_run_tests.py' | q" dummy.py
+#   vim -c "execute 'pyfile .vim/ftplugin/python/run_python_tests/test_run_python_tests.py' | q" dummy.py
 #
 # This will print nothing and exit if all tests pass, or display just the
 # first traceback and wait for ENTER if any tests fail.
 #
 # It uses 'execute' instead of 'pyfile' directly, because that allows us to
 # chain a list of commands, separated by |, so that a succesful run will
-# quit (the 'q'). (pyfile by itself eats the whole line as a filename)
+# quit (the 'q'). (pyfile by itself would eat the whole line as a filename)
 #
 # Methods and classes under test are imported by the command-line above
 # specifying a python file (dummy.py) to edit, so all python plugins
