@@ -24,11 +24,11 @@ DESCRIPTION
          test class name, then run
          "python -m unittest --verbose package.subpack.module.class.method")
 
-    For F5, F6, & F7, you will want to check what Vim's current directory is. This will affect the path or sequence of packages used to reference your test module. Set the current directory in Vim using the :cd command. It should be set to the same directory that you'd have to be in to execute your tests from the command-line, which is generally your project root.
-    
-    F5 : Run the Python file in the current buffer
-    F6 : Find & run the unit tests of the Python file in the current buffer
-    F7 : Run the single test method under the cursor
+    For F5, F6, & F7, you will want to check what Vim's current directory is.
+    This will affect the path or sequence of packages used to reference your
+    test module. Set the current directory in Vim using the :cd command. It
+    should be set to the same directory that you'd have to be in to execute
+    your tests from the command-line, which is generally your project root.
 
     All running of files or tests is done asynchronously, so you can continue
     using Vim while it runs. When complete, the output is read into Vim's
@@ -55,8 +55,7 @@ INSTALL
            |-python
               |-run_python_tests.vim
               |-run_python_tests
-                 |-run_python_tests.py
-                 |-test_run_python_tests.py
+                 |-a bunch of files in here, including:
                  |-README.txt
 
 
