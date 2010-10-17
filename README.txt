@@ -14,6 +14,18 @@ DESCRIPTION
     <Leader>a : toggles between the Python file in the current buffer and its
                 unit tests.
     F4 : Toggle the quickfix window open or closed.
+    F5 : Run the Python file in the current buffer.
+         (i.e. run "python dir\subdir\file.py".)
+    F6 : Find & run the unit tests of the Python file in the current buffer.
+         (i.e. find the unittest module as described below, then run
+         "python -m unittest package.subpackage.module")
+    F7 : Run the single test method under the cursor
+         (i.e. find the name of the test method the cursor is in, find its
+         test class name, then run
+         "python -m unittest --verbose package.subpack.module.class.method")
+
+    For F5, F6, & F7, you will want to check what Vim's current directory is. This will affect the path or sequence of packages used to reference your test module. Set the current directory in Vim using the :cd command. It should be set to the same directory that you'd have to be in to execute your tests from the command-line, which is generally your project root.
+    
     F5 : Run the Python file in the current buffer
     F6 : Find & run the unit tests of the Python file in the current buffer
     F7 : Run the single test method under the cursor
@@ -54,11 +66,11 @@ TROUBLESHOOTING
     "ImportError: No module named X", or "ValueError: Attempted relative
     import beyond toplevel package"
 
-    A) Are you sure Vim's current working directory is correct? Set it using
-    the Vim :cd command. I have to set it to my project root directory for me
-    to be able to run my unittests. This is true if I'm trying to run the
-    tests from the command-line too.
-
+    A) Are you sure Vim's current working directory is correct? These are the
+    errors you will likely see if it is not. Can you run your module's unit
+    tests from the command line from the same directory that Vim is currently
+    in?
+    
 
 PYTHON TRACEBACKS IN THE VIM QUICKFIX WINDOW
 

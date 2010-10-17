@@ -14,5 +14,5 @@ zip:
 	mkdir dist
 	cp -r ftplugin dist
 	cp README.txt dist/ftplugin/python/run_python_tests
-	(cd dist; zip -r vim_run_python_tests.zip ftplugin)
+	(cd dist; zip -r run_python_tests.zip ftplugin)
 
