@@ -1,4 +1,4 @@
-Vim run tests
+Vim Run Python Tests
 
     http://bitbucket.org/tartley/vim_run_python_tests
 
