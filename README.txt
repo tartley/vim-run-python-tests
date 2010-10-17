@@ -32,7 +32,7 @@ DESCRIPTION
     http://bitbucket.org/tartley/rerun
 
 
-PYTHON TRACEBACKS IN VIM QUICKFIX
+PYTHON TRACEBACKS IN THE VIM QUICKFIX WINDOW
 
     The default value of Vim's errorformat variable for working with Python
     only shows one entry from each traceback, which seems unhelpful to me. To
@@ -41,7 +41,7 @@ PYTHON TRACEBACKS IN VIM QUICKFIX
         CompilerSet efm=\%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ %m,%C\ %m,%Z
 
     When you now run the ':compiler pyunit' command (as the run_tests script
-    does whenever you press F5, f6, or f7), Vim's quickfix window will now
+    does whenever you press F5, F6, or F7), Vim's quickfix window will now
     display all entries from tracebacks.
 
 
@@ -57,6 +57,18 @@ INSTALL
                  |-run_tests.py
                  |-test_run_tests.py
                  |-README.txt
+
+
+TROUBLESHOOTING
+
+Q) When I try to run tests, I see a traceback from unittest, such as:
+    "ImportError: No module named X", or
+    "ValueError: Attempted relative import beyond toplevel package"
+
+A) Are you sure Vim's current working directory is correct? Set it using the
+Vim :cd command. I have to set it to my project root directory for me to be
+able to run my unittests. This is true if I'm trying to run the tests from the
+command-line too.
 
 
 THANKS
