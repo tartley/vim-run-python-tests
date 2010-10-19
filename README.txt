@@ -110,4 +110,3 @@ CONTACT
     have problems with this script, or ideas on how it could be better.
 
     Jonathan Hartley, tartley@tartley.com
-
