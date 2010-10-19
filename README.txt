@@ -1,11 +1,16 @@
-Vim Run Python Tests
-
-    http://bitbucket.org/tartley/vim_run_python_tests
+Run Python Tests
 
     Vim scripts to run Python unit tests.
 
-    Only currently tested on Vim 7.2 on Windows XP.
-    
+    Docs and download:
+        http://www.vim.org/scripts/script.php?script_id=3281
+
+    Development Hg repository:
+        http://bitbucket.org/tartley/vim_run_python_tests
+
+    Only currently tested on Windows XP, gVim.exe 7.2 & 7.3.
+    Does not work on vim.exe, unless you recompile to include Python support.
+
 
 DESCRIPTION
     
@@ -87,8 +92,8 @@ PYTHON TRACEBACKS IN THE VIM QUICKFIX WINDOW
 
 TODO
 
-    * Try with latest Vim
     * Make it all work on Linux
+    * Allow user to configure the commands used to run tests.
     * Instead of printing out status messages, can we prepend them to the
       output in the quickfix window?
 
