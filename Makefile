@@ -7,12 +7,24 @@ help:
 
 install:
 	cp -r ftplugin ~/.vim
-	cp README.txt ~/.vim/ftplugin/python/run_python_tests
+	cp README.txt LICENSE.txt ~/.vim/ftplugin/python/run_python_tests
 
-zip:
+antiinstall:
+	# copy currently installed files from ~/.vim to here
+	# WARNING: blows away any local changes
+	rm -rf ftplugin
+	cp -r ~/.vim/ftplugin .
+	mv ftplugin/python/run_python_tests/*.txt .
+
+dist:
 	rm -rf dist
 	mkdir dist
 	cp -r ftplugin dist
 	cp README.txt dist/ftplugin/python/run_python_tests
+
+zip: dist
 	(cd dist; zip -r run_python_tests.zip ftplugin)
+
+clean:
+	rm -rf dist
 
