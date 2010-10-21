@@ -16,7 +16,7 @@ Run Python Tests
 
 INSTALL
 
-    Unzip into your ~/.vim folder. It should provide:
+    Unzip into your home .vim or vimfiles folder. It should provide:
 
     ~/.vim
         |-ftplugin
@@ -87,8 +87,8 @@ PYTHON TRACEBACKS IN THE VIM QUICKFIX WINDOW
 
     The default value of Vim's errorformat variable for working with Python
     only shows one entry from each traceback, which seems unhelpful to me. To
-    fix this, you can create a file ~/.vim/compiler/pyunit, which contains
-    just:
+    fix this, you can create a file in your home .vim or vimfiles folder,
+    called compiler/pyunit, which just contains:
 
         CompilerSet efm=\%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ %m,%C\ %m,%Z
 
